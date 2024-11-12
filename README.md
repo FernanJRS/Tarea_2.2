@@ -1,4 +1,4 @@
-# login_app
+# Tarea 2.2
 # Trabajo realizado por:
 
 Fernando Josué Rivera Sosa
