@@ -59,15 +59,15 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  assets:
-    - assets\home_page_photo1.jpg
-    - assets\profile_picture.jpg
-    - assets\session_photo.jpeg
-    - assets\welcome_photo.png
-    - assets\option_1.png
-    - assets\option_2.jpg
-    - assets\option_3.png
-    - assets\option_4.png
+  # assets:
+  #   - assets\home_page_photo1.jpg
+  #   - assets\profile_picture.jpg
+  #   - assets\session_photo.jpeg
+  #   - assets\welcome_photo.png
+  #   - assets\option_1.png
+  #   - assets\option_2.jpg
+  #   - assets\option_3.png
+  #   - assets\option_4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

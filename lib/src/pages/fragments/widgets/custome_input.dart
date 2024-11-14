@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomInput extends StatelessWidget {
-  const CustomInput(
-      {super.key,
-      required this.userController,
-      required this.title,
-      this.keyboardType = TextInputType.text,
-      this.iconButton,
-      this.obscureText = false,
-      this.prefixIcon,
-      this.maxChars = 15});
+  const CustomInput({
+    super.key,
+    required this.userController,
+    required this.title,
+    this.keyboardType = TextInputType.text,
+    this.iconButton,
+    this.obscureText = false,
+    this.prefixIcon,
+  });
 
   final TextEditingController userController;
   final String title;
@@ -17,7 +17,6 @@ class CustomInput extends StatelessWidget {
   final IconButton? iconButton;
   final bool obscureText;
   final Icon? prefixIcon;
-  final int maxChars;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,6 @@ class CustomInput extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: iconButton,
       ),
-      maxLength: maxChars,
     );
   }
 }
