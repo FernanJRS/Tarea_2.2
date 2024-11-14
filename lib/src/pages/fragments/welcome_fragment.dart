@@ -29,25 +29,20 @@ class WelcomePageFragment extends StatelessWidget {
         const SizedBox(height: 30),
         FilledButton(
           onPressed: () {
-            Navigator.of(context).popAndPushNamed('/sesion');
+            Navigator.popAndPushNamed(context, '/sesion');
           },
           style: FilledButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
             textStyle:
                 GoogleFonts.kanit(fontSize: 17, fontWeight: FontWeight.w300),
           ),
-          child: const Text('Iniciar Sesión'),
+          child: const Text('Conectarse'),
         ),
-        TextButton(
-          onPressed: () {
-            Navigator.of(context).popAndPushNamed('/sesion');
-          },
-          style: TextButton.styleFrom(
-            textStyle:
-                GoogleFonts.lora(fontSize: 15, fontWeight: FontWeight.w500),
-          ),
-          child: const Text('No tienes una cuenta? Registrate aquí'),
-        )
+        const SizedBox(height: 10),
+        Text(
+          'Haz clic en Conectarse y entra en este Mundo',
+          style: GoogleFonts.lora(fontSize: 15, fontWeight: FontWeight.w500),
+        ),
       ],
     );
   }

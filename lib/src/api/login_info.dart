@@ -1,6 +1,7 @@
 List<Map<String, String>> loginInfo = [
   {
-    'userName': 'fjriveras@unah.hn',
+    'userName': 'Fernando Rivera',
+    'mail': 'fjriveras@unah.hn',
     'password': '20212120056',
   }
 ];

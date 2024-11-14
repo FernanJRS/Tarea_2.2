@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/src/pages/fragments/login_fragment.dart';
-import 'package:login_app/src/pages/fragments/register_fragment.dart';
 import 'package:login_app/src/pages/home_page.dart';
 import 'package:login_app/src/pages/session_page.dart';
 import 'package:login_app/src/pages/welcome_page.dart';
@@ -20,8 +18,6 @@ class MyApp extends StatelessWidget {
         '/': (context) => const WelcomePage(),
         '/sesion': (context) => SessionPage(),
         '/inicio': (context) => HomePage(),
-        '/login': (context) => LoginFragment(),
-        '/register': (context) => RegisterFragment(),
       },
     );
   }
