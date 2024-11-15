@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:login_app/src/pages/fragments/widgets/register_view.dart';
 
-class RegisterFragment extends StatelessWidget {
+class RegisterFragment extends StatefulWidget {
   const RegisterFragment({super.key});
 
   @override
+  State<RegisterFragment> createState() => _RegisterFragmentState();
+}
+
+class _RegisterFragmentState extends State<RegisterFragment> {
+  final nameController = TextEditingController();
+  final mailController = TextEditingController();
+  final phoneController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmationPasswordController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
       child: Card(
           elevation: 12,
           color: Colors.blueGrey[50],
-          child: ListView(
-            children: [
-              Text(
-                'Registrate y\n Entra en un Mundo Distinto!',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.figtree(
-                  color: Colors.black87,
-                  fontSize: 20,
-                ),
-              ),
-            ],
-          )),
+          child: RegisterView(
+              nameController: nameController,
+              mailController: mailController,
+              phoneController: phoneController,
+              passwordController: passwordController,
+              confirmationPasswordController: confirmationPasswordController)),
     );
   }
 }

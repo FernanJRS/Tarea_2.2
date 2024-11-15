@@ -11,8 +11,8 @@ class LoginFragment extends StatefulWidget {
 class _LoginFragmentState extends State<LoginFragment> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 140),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 140),
       child: Card(
         elevation: 12,
         color: Colors.blueGrey[50],

@@ -38,10 +38,11 @@ class WelcomePageFragment extends StatelessWidget {
           ),
           child: const Text('Conectarse'),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 15),
         Text(
-          'Haz clic en Conectarse y entra en este Mundo',
+          'Haz clic en Conectarse \ny adentrate en una Experiencia Única',
           style: GoogleFonts.lora(fontSize: 15, fontWeight: FontWeight.w500),
+          textAlign: TextAlign.center,
         ),
       ],
     );

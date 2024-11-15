@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_app/src/pages/fragments/widgets/custome_input.dart';
+import 'package:login_app/src/pages/fragments/widgets/log_in_button.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({super.key});
@@ -32,12 +33,13 @@ class _LoginViewState extends State<LoginView> {
           height: 25,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: const EdgeInsets.fromLTRB(15, 5, 15, 10),
           child: Column(
             children: [
               CustomInput(
                 title: 'Correo',
                 userController: userController,
+                prefixIcon: const Icon(Icons.mail_outline),
               ),
               const SizedBox(
                 height: 10,
@@ -56,6 +58,7 @@ class _LoginViewState extends State<LoginView> {
                       color: Colors.blueGrey[900],
                     )),
                 obscureText: showPass,
+                prefixIcon: Icon(Icons.lock_outline),
               ),
             ],
           ),
@@ -68,11 +71,7 @@ class _LoginViewState extends State<LoginView> {
         TextButton(
             onPressed: () {},
             child: Text('Olvidaste tu contraseña? Haz click aquí')),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: FloatingActionButton.extended(
-              onPressed: () {}, label: Text('Iniciar Sesión')),
-        )
+        LogInButton(title: 'Iniciar Sesion'),
       ],
     );
   }

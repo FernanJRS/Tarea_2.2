@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomInput extends StatelessWidget {
-  const CustomInput({
-    super.key,
-    required this.userController,
-    required this.title,
-    this.keyboardType = TextInputType.text,
-    this.iconButton,
-    this.obscureText = false,
-    this.prefixIcon,
-  });
+  const CustomInput(
+      {super.key,
+      required this.userController,
+      required this.title,
+      this.keyboardType = TextInputType.text,
+      this.iconButton,
+      this.obscureText = false,
+      this.prefixIcon,
+      this.hintText});
 
   final TextEditingController userController;
   final String title;
@@ -17,6 +17,7 @@ class CustomInput extends StatelessWidget {
   final IconButton? iconButton;
   final bool obscureText;
   final Icon? prefixIcon;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,10 @@ class CustomInput extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: obscureText,
       decoration: InputDecoration(
-        hintText: 'Ingrese su $title',
+        hintText: hintText ?? 'Ingrese su $title',
         label: Text(title),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.elliptical(25, 25)),
         ),
         prefixIcon: prefixIcon,
         suffixIcon: iconButton,
