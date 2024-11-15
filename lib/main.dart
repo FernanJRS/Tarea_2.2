@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/inicio',
       routes: {
         '/': (context) => const WelcomePage(),
-        '/sesion': (context) => SessionPage(),
-        '/inicio': (context) => HomePage(),
-        '/wait': (context) => PageNotBuild(),
+        '/sesion': (context) => const SessionPage(),
+        '/inicio': (context) => const HomePage(),
+        '/wait': (context) => const PageNotBuild(),
       },
     );
   }
