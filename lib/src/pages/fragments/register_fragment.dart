@@ -17,17 +17,11 @@ class _RegisterFragmentState extends State<RegisterFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
-      child: Card(
-          elevation: 12,
-          color: Colors.blueGrey[50],
-          child: RegisterView(
-              nameController: nameController,
-              mailController: mailController,
-              phoneController: phoneController,
-              passwordController: passwordController,
-              confirmationPasswordController: confirmationPasswordController)),
-    );
+    return RegisterView(
+        nameController: nameController,
+        mailController: mailController,
+        phoneController: phoneController,
+        passwordController: passwordController,
+        confirmationPasswordController: confirmationPasswordController);
   }
 }

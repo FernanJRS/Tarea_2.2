@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:login_app/src/pages/fragments/widgets/custome_input.dart';
+import 'package:login_app/src/pages/fragments/widgets/log_in_button.dart';
+import 'package:login_app/src/pages/fragments/widgets/title_session_page.dart';
 
 class RegisterView extends StatefulWidget {
   RegisterView({
@@ -30,13 +31,13 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 120),
       children: [
-        Text(
-          'Registrate y\n Entra en un Mundo Distinto!',
-          textAlign: TextAlign.center,
-          style: GoogleFonts.figtree(
-            color: Colors.black87,
-            fontSize: 20,
+        const Padding(
+          padding: EdgeInsets.only(left: 15),
+          child: TitleSessionPage(
+            data: 'Registrate y\nExplora un Mundo Distinto!',
+            fontSize: 22,
           ),
         ),
         const SizedBox(height: 15),
@@ -96,15 +97,9 @@ class _RegisterViewState extends State<RegisterView> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 75, vertical: 8),
-          child: FloatingActionButton.extended(
-            onPressed: () {},
-            label: Text(
-              'Registrarse',
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
-        )
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: LogInButton(title: 'Registrarse'),
+        ),
       ],
     );
   }

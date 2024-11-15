@@ -9,15 +9,13 @@ class LoginFragment extends StatefulWidget {
 }
 
 class _LoginFragmentState extends State<LoginFragment> {
+  final userController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 140),
-      child: Card(
-        elevation: 12,
-        color: Colors.blueGrey[50],
-        child: LoginView(),
-      ),
+    return LoginView(
+      userController: userController,
+      passwordController: passwordController,
     );
   }
 }

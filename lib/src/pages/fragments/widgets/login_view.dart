@@ -2,30 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_app/src/pages/fragments/widgets/custome_input.dart';
 import 'package:login_app/src/pages/fragments/widgets/log_in_button.dart';
+import 'package:login_app/src/pages/fragments/widgets/title_session_page.dart';
 
 class LoginView extends StatefulWidget {
-  LoginView({super.key});
+  LoginView(
+      {super.key,
+      required this.userController,
+      required this.passwordController});
+
+  final TextEditingController userController;
+  final TextEditingController passwordController;
 
   @override
   State<LoginView> createState() => _LoginViewState();
 }
 
 class _LoginViewState extends State<LoginView> {
-  final userController = TextEditingController();
-
-  final passwordController = TextEditingController();
-
   bool showPass = true;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 120),
       children: [
-        Text(
-          'Hey!\nInicia Sesión y\nContinua Explorando!',
-          textAlign: TextAlign.center,
-          style: GoogleFonts.figtree(
-            color: Colors.black87,
+        const Padding(
+          padding: EdgeInsets.only(left: 15),
+          child: TitleSessionPage(
+            data: 'Hey!\nInicia Sesión y\nContinua Explorando!',
             fontSize: 22,
           ),
         ),
@@ -38,7 +41,7 @@ class _LoginViewState extends State<LoginView> {
             children: [
               CustomInput(
                 title: 'Correo',
-                userController: userController,
+                userController: widget.userController,
                 prefixIcon: const Icon(Icons.mail_outline),
               ),
               const SizedBox(
@@ -46,7 +49,7 @@ class _LoginViewState extends State<LoginView> {
               ),
               CustomInput(
                 title: 'Contraseña',
-                userController: passwordController,
+                userController: widget.passwordController,
                 keyboardType: TextInputType.visiblePassword,
                 iconButton: IconButton(
                     onPressed: () {
@@ -71,7 +74,12 @@ class _LoginViewState extends State<LoginView> {
         TextButton(
             onPressed: () {},
             child: Text('Olvidaste tu contraseña? Haz click aquí')),
-        LogInButton(title: 'Iniciar Sesion'),
+        LogInButton(
+          title: 'Iniciar Sesion',
+          onPressed: () {
+            Navigator.popAndPushNamed(context, '/inicio');
+          },
+        ),
       ],
     );
   }

@@ -61,7 +61,7 @@ flutter:
 
   assets:
     - assets\home_page_photo1.jpg
-    - assets\profile_picture.jpg
+    - assets\profile_picture.png
     - assets\session_photo.jpeg
     - assets\welcome_photo.png
     - assets\option_1.png

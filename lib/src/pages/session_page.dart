@@ -18,8 +18,7 @@ class _SessionPageState extends State<SessionPage> {
   @override
   Widget build(BuildContext context) {
     return BackgroundCard(
-        child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 16),
+        child: SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: PageView(
@@ -30,49 +29,53 @@ class _SessionPageState extends State<SessionPage> {
             RegisterFragment(),
           ],
         ),
-        bottomNavigationBar: Card(
-          child: SizedBox(
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TextButton(
-                    onPressed: () {
-                      pageViewController.jumpToPage(0);
-                      colorText = !colorText;
-                      setState(() {});
-                    },
-                    child: Text(
-                      'Inicia Sesion',
-                      style: GoogleFonts.figtree(
-                        fontWeight: FontWeight.w700,
-                        color: colorText
-                            ? Colors.teal[900]
-                            : Colors.indigoAccent[700],
-                        fontSize: 17,
-                      ),
-                    )),
-                const VerticalDivider(
-                  indent: 10,
-                  endIndent: 10,
-                ),
-                TextButton(
-                    onPressed: () {
-                      pageViewController.jumpToPage(1);
-                      colorText = !colorText;
-                      setState(() {});
-                    },
-                    child: Text(
-                      'Registrate',
-                      style: GoogleFonts.figtree(
-                        fontWeight: FontWeight.w700,
-                        color: colorText
-                            ? Colors.indigoAccent[700]
-                            : Colors.teal[900],
-                        fontSize: 17,
-                      ),
-                    )),
-              ],
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            elevation: 10,
+            child: SizedBox(
+              height: 55,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextButton(
+                      onPressed: () {
+                        pageViewController.jumpToPage(0);
+                        colorText = !colorText;
+                        setState(() {});
+                      },
+                      child: Text(
+                        'Inicia Sesion',
+                        style: GoogleFonts.figtree(
+                          fontWeight: FontWeight.w700,
+                          color: colorText
+                              ? Colors.teal[800]
+                              : Colors.indigoAccent[700],
+                          fontSize: 17,
+                        ),
+                      )),
+                  const VerticalDivider(
+                    indent: 10,
+                    endIndent: 10,
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        pageViewController.jumpToPage(1);
+                        colorText = !colorText;
+                        setState(() {});
+                      },
+                      child: Text(
+                        'Registrate',
+                        style: GoogleFonts.figtree(
+                          fontWeight: FontWeight.w700,
+                          color: colorText
+                              ? Colors.indigoAccent[700]
+                              : Colors.teal[800],
+                          fontSize: 17,
+                        ),
+                      )),
+                ],
+              ),
             ),
           ),
         ),
