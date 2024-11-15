@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login_app/src/pages/fragments/home_fragment.dart';
+import 'package:login_app/src/pages/widgets/bottom_menu.dart';
+import 'package:login_app/src/shared/pages/page_not_build.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,12 +13,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool cambio = true;
+  int pageSelected = 0;
+  final pageViewController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70,
+        toolbarHeight: 75,
         backgroundColor: Colors.blueGrey[700],
         leadingWidth: 62,
         leading: CircleAvatar(
@@ -25,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         ),
         title: Text(
           'Fernando Josué Rivera\nfjriveras@unah.hn',
-          style: GoogleFonts.exo(fontSize: 20, color: Colors.white),
+          style: GoogleFonts.exo(fontSize: 19, color: Colors.white),
         ),
         actions: [
           IconButton(
@@ -34,12 +39,30 @@ class _HomePageState extends State<HomePage> {
                 setState(() {});
               },
               icon: Icon(
-                Icons.newspaper_rounded,
+                Icons.newspaper_outlined,
                 color: cambio ? Colors.white : Colors.indigo[100],
               ))
         ],
       ),
-      body: Text('Hola'),
+      body: PageView(
+        controller: pageViewController,
+        allowImplicitScrolling: false,
+        onPageChanged: (index) {
+          pageSelected = index;
+          setState(() {});
+        },
+        children: [
+          HomeFragment(),
+          PageNotBuild(),
+          PageNotBuild(),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationMenu(
+        currentSelection: pageSelected,
+        onPageSelected: (pageSelected) {
+          pageViewController.jumpToPage(pageSelected);
+        },
+      ),
     );
   }
 }

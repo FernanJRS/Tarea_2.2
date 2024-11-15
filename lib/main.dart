@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_app/src/pages/home_page.dart';
 import 'package:login_app/src/pages/session_page.dart';
 import 'package:login_app/src/pages/welcome_page.dart';
+import 'package:login_app/src/shared/pages/page_not_build.dart';
 
 void main() => runApp(const MyApp());
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const WelcomePage(),
         '/sesion': (context) => SessionPage(),
         '/inicio': (context) => HomePage(),
+        '/wait': (context) => PageNotBuild(),
       },
     );
   }

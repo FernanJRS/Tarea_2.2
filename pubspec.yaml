@@ -68,6 +68,7 @@ flutter:
     - assets\option_2.jpg
     - assets\option_3.png
     - assets\option_4.png
+    - assets\page_error.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
