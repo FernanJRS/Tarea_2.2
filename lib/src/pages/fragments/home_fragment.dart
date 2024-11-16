@@ -8,26 +8,26 @@ class HomeFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
               colors: [Colors.blueGrey, Colors.indigo, Colors.deepPurple],
               begin: Alignment.centerLeft)),
       child: ListView(
         children: [
+          Image.asset('assets/home_page_photo1.jpg'),
+          const SizedBox(height: 10),
           Card(
             color: Colors.blueGrey[600],
             elevation: 2,
-            margin: EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+            margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
             child: Text(
-              'Sigue Creando Para Algún Día Llegar \nDonde Nadie Ha Podido!',
+              'Sigue Creando Para Algún Día Llegar \nA Donde Nadie Ha Podido!',
               textAlign: TextAlign.center,
               style: GoogleFonts.kanit(fontSize: 15, color: Colors.white),
             ),
           ),
-          Image.asset('assets/home_page_photo1.jpg'),
-          const SizedBox(height: 30),
-          GridView.extent(
-            maxCrossAxisExtent: 2,
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CardItem(
                 description: 'Continua con \ntus proyectos',
@@ -37,16 +37,24 @@ class HomeFragment extends StatelessWidget {
                 description: 'Mira que han \nhecho los demás',
                 imageAsset: 'assets/option_2.jpg',
               ),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
               CardItem(
                 description: 'Crea un nuevo \nproyecto',
                 imageAsset: 'assets/option_1.png',
               ),
               CardItem(
-                description: 'Tienes dudas?  \nContáctanos',
-                imageAsset: 'assets\option_4.png',
+                description: 'Hay problemas?\nContáctanos',
+                imageAsset: 'assets/option_4.png',
               ),
             ],
-          )
+          ),
         ],
       ),
     );

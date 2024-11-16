@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:login_app/src/pages/fragments/widgets/custome_input.dart';
 import 'package:login_app/src/pages/fragments/widgets/log_in_button.dart';
 import 'package:login_app/src/pages/fragments/widgets/title_session_page.dart';
+import 'package:login_app/src/api/login_info.dart';
+import 'package:login_app/src/models/arguments/login_arguments.dart';
 
 class LoginView extends StatefulWidget {
-  LoginView(
-      {super.key,
-      required this.userController,
-      required this.passwordController});
+  const LoginView({
+    super.key,
+    required this.userController,
+    required this.passwordController,
+  });
 
   final TextEditingController userController;
   final TextEditingController passwordController;
@@ -28,7 +30,7 @@ class _LoginViewState extends State<LoginView> {
         const Padding(
           padding: EdgeInsets.only(left: 15),
           child: TitleSessionPage(
-            data: 'Hey!\nInicia Sesión y\nContinua Explorando!',
+            data: 'Hey!\nInicia Sesión y\nContinua Creando!',
             fontSize: 22,
           ),
         ),
@@ -77,7 +79,14 @@ class _LoginViewState extends State<LoginView> {
         LogInButton(
           title: 'Iniciar Sesion',
           onPressed: () {
-            Navigator.popAndPushNamed(context, '/inicio');
+            if (widget.userController.text == loginInfo[0]['mail'] &&
+                widget.passwordController.text == loginInfo[0]['password']) {
+              Navigator.popAndPushNamed(context, '/inicio',
+                  arguments: LoginArguments(
+                    widget.userController.text,
+                    loginInfo[0]['userName']!,
+                  ));
+            }
           },
         ),
       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardItem extends StatelessWidget {
   const CardItem(
@@ -14,9 +15,9 @@ class CardItem extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(8)),
           shape: BoxShape.rectangle,
           gradient: LinearGradient(colors: [
-            Colors.lime,
             Colors.lightGreenAccent,
-            Colors.yellow,
+            Colors.limeAccent,
+            Colors.yellowAccent,
           ])),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +29,11 @@ class CardItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(description),
+              Text(
+                description,
+                style: GoogleFonts.faustina(
+                    fontWeight: FontWeight.w700, color: Colors.blueGrey[800]),
+              ),
               IconButton(
                   onPressed: () {}, icon: Icon(Icons.arrow_forward_outlined))
             ],

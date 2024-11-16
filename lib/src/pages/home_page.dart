@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login_app/src/models/arguments/login_arguments.dart';
 import 'package:login_app/src/pages/fragments/home_fragment.dart';
 import 'package:login_app/src/pages/widgets/bottom_menu.dart';
 import 'package:login_app/src/shared/pages/page_not_build.dart';
@@ -18,6 +19,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final arguments =
+        ModalRoute.of(context)!.settings.arguments as LoginArguments;
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 75,
@@ -29,7 +33,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         title: Text(
-          'Fernando Josué Rivera\nfjriveras@unah.hn',
+          '${arguments.userName}\n${arguments.mail}',
           style: GoogleFonts.exo(fontSize: 19, color: Colors.white),
         ),
         actions: [

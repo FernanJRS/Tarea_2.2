@@ -8,7 +8,7 @@ class LogInButton extends StatefulWidget {
     this.onPressed,
   });
   final String title;
-  void Function()? onPressed;
+  final void Function()? onPressed;
 
   @override
   State<LogInButton> createState() => _LogInButtonState();
