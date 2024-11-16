@@ -35,7 +35,8 @@ class CardItem extends StatelessWidget {
                     fontWeight: FontWeight.w700, color: Colors.blueGrey[800]),
               ),
               IconButton(
-                  onPressed: () {}, icon: Icon(Icons.arrow_forward_outlined))
+                  onPressed: () {},
+                  icon: const Icon(Icons.arrow_forward_outlined))
             ],
           )
         ],

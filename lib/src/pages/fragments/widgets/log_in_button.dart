@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LogInButton extends StatefulWidget {
-  LogInButton({
+  const LogInButton({
     super.key,
     required this.title,
     this.onPressed,

@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
           pageSelected = index;
           setState(() {});
         },
-        children: [
+        children: const [
           HomeFragment(),
           PageNotBuild(),
           PageNotBuild(),

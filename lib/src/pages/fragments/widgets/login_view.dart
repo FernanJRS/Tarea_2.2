@@ -63,7 +63,7 @@ class _LoginViewState extends State<LoginView> {
                       color: Colors.blueGrey[900],
                     )),
                 obscureText: showPass,
-                prefixIcon: Icon(Icons.lock_outline),
+                prefixIcon: const Icon(Icons.lock_outline),
               ),
             ],
           ),
@@ -75,7 +75,7 @@ class _LoginViewState extends State<LoginView> {
         ),
         TextButton(
             onPressed: () {},
-            child: Text('Olvidaste tu contraseña? Haz click aquí')),
+            child: const Text('Olvidaste tu contraseña? Haz click aquí')),
         LogInButton(
           title: 'Iniciar Sesion',
           onPressed: () {

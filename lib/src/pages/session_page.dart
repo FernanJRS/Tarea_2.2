@@ -24,7 +24,7 @@ class _SessionPageState extends State<SessionPage> {
         body: PageView(
           physics: const NeverScrollableScrollPhysics(),
           controller: pageViewController,
-          children: [
+          children: const [
             LoginFragment(),
             RegisterFragment(),
           ],

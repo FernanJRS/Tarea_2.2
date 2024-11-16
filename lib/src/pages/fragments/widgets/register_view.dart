@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/src/pages/fragments/widgets/custome_input.dart';
 import 'package:login_app/src/pages/fragments/widgets/log_in_button.dart';
+import 'package:login_app/src/pages/fragments/widgets/message_dialog.dart';
 import 'package:login_app/src/pages/fragments/widgets/title_session_page.dart';
 
 class RegisterView extends StatefulWidget {
@@ -98,7 +99,134 @@ class _RegisterViewState extends State<RegisterView> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8),
-          child: LogInButton(title: 'Registrarse'),
+          child: LogInButton(
+              title: 'Registrarse',
+              onPressed: () {
+                var cont = 0;
+
+                if (widget.nameController.text.trim().length >= 3 &&
+                    widget.nameController.text.trim().length <= 10) {
+                  cont += 1;
+                } else {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const MessageDialog(
+                          description:
+                              'El nombre debe tener mímino 3 caracteres y máximo 10 caracteres.',
+                        );
+                      });
+                }
+                if (widget.mailController.text.contains('@') == true &&
+                    widget.mailController.text.isNotEmpty == true) {
+                  final strPrueba =
+                      widget.mailController.text.replaceFirst('@', '');
+                  if (strPrueba.contains('@') == true) {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return const MessageDialog(
+                            description:
+                                'El correo solo puede contener un "@".',
+                          );
+                        });
+                  } else {
+                    final strCompr = widget.mailController.text.split('@');
+
+                    if (strCompr[1] == 'unah.edu.hn' ||
+                        strCompr[1] == 'unah.hn') {
+                      cont += 1;
+                    } else {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const MessageDialog(
+                              description:
+                                  'El correo debe finalizar en unah.edu.hn ó unah.hn.',
+                            );
+                          });
+                    }
+                  }
+                } else {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const MessageDialog(
+                          description: 'El correo ingresado no es válido.',
+                        );
+                      });
+                }
+
+                if (widget.phoneController.text[0] == '3' ||
+                    widget.phoneController.text[0] == '9') {
+                  if (widget.phoneController.text.trim().length == 8) {
+                    cont += 1;
+                  } else {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return const MessageDialog(
+                            description:
+                                'El teléfono ingresado debe contener únicamente 8 números.',
+                          );
+                        });
+                  }
+                } else {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const MessageDialog(
+                          description:
+                              'El teléfono ingresado debe comenzar con un 3 o un 9.',
+                        );
+                      });
+                }
+
+                if (widget.passwordController.text.trim().length >= 8) {
+                  var contUnaMayus = 0;
+                  for (var i; i < widget.passwordController.text.length; i++) {
+                    if (widget.passwordController.text[i] ==
+                        widget.passwordController.text[i].toUpperCase()) {
+                      contUnaMayus += 1;
+                    }
+                  }
+
+                  var contCarEsp = 0;
+                } else {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const MessageDialog(
+                          description:
+                              'La contraseña debe contener mínimo 8 caracteres.',
+                        );
+                      });
+                }
+
+                if (cont == 4) {
+                  if (widget.passwordController.text !=
+                      widget.confirmationPasswordController.text) {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return const MessageDialog(
+                            description:
+                                'Verifica que las contraseñas ingresadas sean iguales.',
+                          );
+                        });
+                  } else {
+                    cont += 1;
+                  }
+                }
+
+                if (cont == 5) {
+                  print('Datos ingresados por el usuario:');
+                  print('Nombre: ${widget.nameController.text}');
+                  print('Correo: ${widget.mailController.text}');
+                  print('Teléfono: ${widget.phoneController.text}');
+                  print('Contraseña: ${widget.passwordController.text}');
+                }
+              }),
         ),
       ],
     );

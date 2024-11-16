@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_app/src/pages/fragments/widgets/login_view.dart';
 
 class LoginFragment extends StatefulWidget {
-  LoginFragment({super.key});
+  const LoginFragment({super.key});
 
   @override
   State<LoginFragment> createState() => _LoginFragmentState();
