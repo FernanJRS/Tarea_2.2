@@ -4,6 +4,7 @@ import 'package:login_app/src/pages/fragments/widgets/log_in_button.dart';
 import 'package:login_app/src/pages/fragments/widgets/title_session_page.dart';
 import 'package:login_app/src/api/login_info.dart';
 import 'package:login_app/src/models/arguments/login_arguments.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({
@@ -44,6 +45,7 @@ class _LoginViewState extends State<LoginView> {
               CustomInput(
                 title: 'Correo',
                 userController: widget.userController,
+                keyboardType: TextInputType.emailAddress,
                 prefixIcon: const Icon(Icons.mail_outline),
               ),
               const SizedBox(
@@ -74,18 +76,59 @@ class _LoginViewState extends State<LoginView> {
           endIndent: 30,
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              print('Uis...');
+            },
             child: const Text('Olvidaste tu contraseña? Haz click aquí')),
         LogInButton(
           title: 'Iniciar Sesion',
           onPressed: () {
-            if (widget.userController.text == loginInfo[0]['mail'] &&
+            if (widget.userController.text.trim().isEmpty &&
+                widget.passwordController.text.trim().isEmpty) {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) => BottomSheet(
+                      onClosing: () {},
+                      builder: (context) {
+                        return Container(
+                          padding: const EdgeInsets.symmetric(vertical: 50),
+                          child: Text(
+                            'Los campos de correo y contraseña no pueden ir vacios.',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.ptSerif(
+                                fontSize: 20,
+                                height: 2,
+                                color: Colors.deepOrange[600],
+                                fontWeight: FontWeight.w700),
+                          ),
+                        );
+                      }));
+            } else if (widget.userController.text == loginInfo[0]['mail'] &&
                 widget.passwordController.text == loginInfo[0]['password']) {
               Navigator.popAndPushNamed(context, '/inicio',
                   arguments: LoginArguments(
                     widget.userController.text,
                     loginInfo[0]['userName']!,
                   ));
+            } else {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) => BottomSheet(
+                      onClosing: () {},
+                      builder: (context) {
+                        return Container(
+                          padding: const EdgeInsets.symmetric(vertical: 50),
+                          child: Text(
+                            'Verifique que el correo y la contraseña sean correctas.',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.ptSerif(
+                                fontSize: 20,
+                                height: 2,
+                                color: Colors.deepOrange[600],
+                                fontWeight: FontWeight.w700),
+                          ),
+                        );
+                      }));
             }
           },
         ),

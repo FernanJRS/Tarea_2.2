@@ -16,18 +16,22 @@ class MessageDialog extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
       content: SizedBox(
-        height: 150,
+        height: 200,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              description,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.ptSerif(
-                  fontSize: 15,
-                  height: 2,
-                  color: Colors.blueGrey[700],
-                  fontWeight: FontWeight.w700),
+            Container(
+              height: 120,
+              alignment: Alignment.center,
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.ptSerif(
+                    fontSize: 13,
+                    height: 2,
+                    color: Colors.blueGrey[700],
+                    fontWeight: FontWeight.w700),
+              ),
             ),
             const SizedBox(height: 15),
             FloatingActionButton.extended(

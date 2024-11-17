@@ -1,9 +1,36 @@
+//* Esta lista fue generada por una IA, pero cumple con una gran variedad
+//* de caracteres especiales.
+
 List<String> specialCharacters = [
   // Símbolos básicos
-  "!", "@", "#", "\$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+",
+  "!",
+  "@",
+  "#",
+  "\$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "-",
+  "_",
+  "=",
+  "+",
+  "{",
+  "}",
 
   // Símbolos de puntuación
-  ".", ",", ":", ";", "'", "\"", "?", "/", "\\", "|",
+  ".",
+  ",",
+  ":",
+  ";",
+  "'",
+  "\"",
+  "?",
+  "/",
+  "\\",
+  "|",
 
   // Operadores y comparadores
   "<", ">", "~", "`",
@@ -42,7 +69,7 @@ List<String> specialCharacters = [
   "₪",
 
   // Símbolos matemáticos
-  "+", "-", "×", "÷", "=", "≠", "≈", "≡", "≤", "≥",
+  "+", "-", "÷", "=", "≠", "≈", "≡", "≤", "≥",
   "∞", "∑", "√", "∫", "∂", "∇", "π", "φ", "μ", "Ω",
 
   // Símbolos técnicos
