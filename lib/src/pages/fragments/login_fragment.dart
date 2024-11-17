@@ -9,8 +9,8 @@ class LoginFragment extends StatefulWidget {
 }
 
 class _LoginFragmentState extends State<LoginFragment> {
-  final userController = TextEditingController();
-  final passwordController = TextEditingController();
+  final userController = TextEditingController(text: 'fjriveras@unah.hn');
+  final passwordController = TextEditingController(text: '20212120056');
   @override
   Widget build(BuildContext context) {
     return LoginView(

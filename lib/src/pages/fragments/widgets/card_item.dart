@@ -12,13 +12,21 @@ class CardItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(15, 15, 15, 2),
       decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black38,
+              spreadRadius: 1,
+              blurRadius: 6,
+              offset: Offset(2, 4),
+            ),
+          ],
           borderRadius: BorderRadius.all(Radius.circular(8)),
           shape: BoxShape.rectangle,
           gradient: LinearGradient(colors: [
-            Colors.lightGreenAccent,
-            Colors.limeAccent,
-            Colors.yellowAccent,
-          ])),
+            Colors.amberAccent,
+            Colors.orangeAccent,
+            Colors.blueAccent,
+          ], begin: Alignment.bottomCenter)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -32,7 +40,7 @@ class CardItem extends StatelessWidget {
               Text(
                 description,
                 style: GoogleFonts.faustina(
-                    fontWeight: FontWeight.w700, color: Colors.blueGrey[800]),
+                    fontWeight: FontWeight.bold, color: Colors.grey[800]),
               ),
               IconButton(
                   onPressed: () {},

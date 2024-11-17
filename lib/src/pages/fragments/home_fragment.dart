@@ -10,7 +10,7 @@ class HomeFragment extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.blueGrey, Colors.indigo, Colors.deepPurple],
+              colors: [Colors.blueGrey, Colors.indigo],
               begin: Alignment.centerLeft)),
       child: ListView(
         children: [

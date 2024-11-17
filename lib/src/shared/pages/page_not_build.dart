@@ -5,16 +5,22 @@ class PageNotBuild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text('Esta página no ha sido desarrollada todavía :('),
-        const SizedBox(height: 10),
-        Image.asset(
-          'assets/page_error.png',
-          scale: 2,
-        )
-      ],
+    return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.blueGrey, Colors.indigo],
+              begin: Alignment.centerLeft)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text('Esta página no ha sido desarrollada todavía :('),
+          const SizedBox(height: 10),
+          Image.asset(
+            'assets/page_error.png',
+            scale: 2,
+          )
+        ],
+      ),
     );
   }
 }

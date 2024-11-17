@@ -93,13 +93,13 @@ class _LoginViewState extends State<LoginView> {
                         return Container(
                           padding: const EdgeInsets.symmetric(vertical: 50),
                           child: Text(
-                            'Los campos de correo y contraseña no pueden ir vacios.',
+                            'Los campos de correo y contraseña \nno pueden ir vacios.',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.ptSerif(
-                                fontSize: 20,
+                                fontSize: 17,
                                 height: 2,
-                                color: Colors.deepOrange[600],
-                                fontWeight: FontWeight.w700),
+                                color: Colors.blueGrey[900],
+                                fontWeight: FontWeight.w600),
                           ),
                         );
                       }));
@@ -119,13 +119,13 @@ class _LoginViewState extends State<LoginView> {
                         return Container(
                           padding: const EdgeInsets.symmetric(vertical: 50),
                           child: Text(
-                            'Verifique que el correo y la contraseña sean correctas.',
+                            'Verifique que el correo y la contraseña \nsean correctas.',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.ptSerif(
-                                fontSize: 20,
+                                fontSize: 17,
                                 height: 2,
-                                color: Colors.deepOrange[600],
-                                fontWeight: FontWeight.w700),
+                                color: Colors.blueGrey[900],
+                                fontWeight: FontWeight.w600),
                           ),
                         );
                       }));
