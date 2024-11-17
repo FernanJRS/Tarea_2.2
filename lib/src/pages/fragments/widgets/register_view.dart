@@ -5,6 +5,7 @@ import 'package:login_app/src/pages/fragments/widgets/message_dialog.dart';
 import 'package:login_app/src/pages/fragments/widgets/title_session_page.dart';
 import 'package:login_app/src/utility/caracteres_especiales.dart';
 
+// ignore: must_be_immutable
 class RegisterView extends StatefulWidget {
   RegisterView({
     super.key,
@@ -210,7 +211,6 @@ class _RegisterViewState extends State<RegisterView> {
 
                       var contUnaMayus = 0;
                       var strCompr = listConChar.last;
-                      print(listConChar.last);
 
                       for (var i = 0; i < strCompr.length; i++) {
                         if (strCompr.contains(strCompr[i].toUpperCase())) {
